@@ -35,9 +35,4 @@ public class MainMenu : MonoBehaviour
         m_Menu.gameObject.SetActive(true);
         m_MenuCredit.gameObject.SetActive(false);
     }
-
-    public void Quit()
-    {
-        //Application.Quit(); //a éviter en cas d'appli web
-    }
 }
