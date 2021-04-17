@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Actor.Obstacle
@@ -17,15 +18,20 @@ namespace Actor.Obstacle
             collider.height = distance;
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            obstacle.OnCollision(other.transform);
+        }
+
         private void OnCollisionEnter(Collision other)
         {
-            obstacle.OnCollision(other);
+            obstacle.OnCollision(other.transform);
         }
 
         // Update is called once per frame
         void Update()
         {
-        
+            
         }
     }
 }

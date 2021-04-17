@@ -10,6 +10,30 @@ namespace Actor.Obstacle
 
         public float distance = 1.0f;
 
+        public float timeBeforeBlowing;
+        private CooldownTimer _timer;
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            _timer = new CooldownTimer(timeBeforeBlowing, true);
+            _timer.Start();
+            _timer.TimerCompleteEvent += TimerOnTimerCompleteEvent;
+        }
+
+        private void TimerOnTimerCompleteEvent()
+        {
+            //woosh
+        }
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+
+            _timer.Update(Time.deltaTime);
+        }
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.green;

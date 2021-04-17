@@ -1,3 +1,5 @@
+using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Actor.Obstacle
@@ -5,14 +7,34 @@ namespace Actor.Obstacle
     [RequireComponent(typeof(Collider), typeof(Rigidbody))]
     public class StaticObstacle : MonoBehaviour
     {
-        private void OnCollisionEnter(Collision other)
+        private void Start()
         {
-            OnCollision(other);
+            OnStart();
         }
 
-        public virtual void OnCollision(Collision other)
+        protected virtual void OnStart()
         {
-            print("hit " + other.transform.name);
+            
+        }
+
+        private void Update()
+        {
+            OnUpdate();
+        }
+
+        public virtual void OnUpdate()
+        {
+            
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            OnCollision(other.transform);
+        }
+
+        public virtual void OnCollision(Transform other)
+        {
+            print("hit " + other.name);
         }
     }
 }
