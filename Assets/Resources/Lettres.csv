@@ -1,0 +1,34 @@
+BRISE D'AMOUR - LETTRES;;;;;;;
+;;;;;;;
+uint;short;bool;string;string;string;X;X
+N#;Niveau d'amour [-3/3];Amorce/Réponse [A=0/R=1];Message page1;Message page2;Message page3;Auteur;Commentaire
+1;0;A;Coucou ! Les adultes veulent plus que je sorte,;du coup j'ai pas pû venir au rendez-vous.;Désolé. Tu me manques.;Enzoe;Message d'intro
+2;;;;;;;
+3;;;;;;;
+4;;;;;;;
+5;;;;;;;
+6;;;;;;;
+7;;;;;;;
+8;;;;;;;
+9;;;;;;;
+10;;;;;;;
+11;;;;;;;
+12;;;;;;;
+13;;;;;;;
+14;;;;;;;
+15;;;;;;;
+16;;;;;;;
+17;;;;;;;
+18;;;;;;;
+19;;;;;;;
+20;;;;;;;
+21;;;;;;;
+22;;;;;;;
+23;;;;;;;
+24;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
