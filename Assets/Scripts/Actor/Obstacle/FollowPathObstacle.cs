@@ -22,7 +22,7 @@ public class FollowPathObstacle : MonoBehaviour
     {
         var localPosition = transform.position;
         
-        Vector3.MoveTowards(localPosition, _destination, movementSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(localPosition, _destination, movementSpeed * Time.deltaTime);
 
         if ((_destination - transform.position).sqrMagnitude < 0.01 * 0.01)
         {
@@ -35,7 +35,7 @@ public class FollowPathObstacle : MonoBehaviour
         Vector3 point = path[index].transform.position;
         index++;
 
-        if (index > path.Length)
+        if (index >= path.Length)
             index = 0;
 
         return point;
