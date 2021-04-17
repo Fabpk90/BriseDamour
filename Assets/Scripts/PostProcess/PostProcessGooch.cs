@@ -8,8 +8,9 @@ public class PostProcessGooch : MonoBehaviour
     public ComputeShader shader;
 
     public Light directionalLight;
-   // [HideInInspector]
+    [HideInInspector]
     public RenderTexture sobel;
+    [HideInInspector]
     public RenderTexture copyTexture;
 
     private CommandBuffer cmd;
@@ -17,8 +18,6 @@ public class PostProcessGooch : MonoBehaviour
     {
         sobel = new RenderTexture(Screen.width, Screen.height, 0) {enableRandomWrite = true};
         copyTexture = new RenderTexture(Screen.width, Screen.height, 0) {enableRandomWrite = true};
-
-        
 
         shader.SetVector("lightDir", directionalLight.transform.forward);
         shader.SetVector("cameraDir", transform.forward);
@@ -46,5 +45,6 @@ public class PostProcessGooch : MonoBehaviour
         
         cmd.Blit(copyTexture, arg2.activeTexture);
         arg1.ExecuteCommandBuffer(cmd);
+        cmd.Release();
     }
 }
