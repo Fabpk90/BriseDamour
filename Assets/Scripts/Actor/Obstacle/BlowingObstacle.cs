@@ -11,27 +11,46 @@ namespace Actor.Obstacle
         public float distance = 1.0f;
 
         public float timeBeforeBlowing;
-        private CooldownTimer _timer;
+        private CooldownTimer _timerBlowing;
+
+        public float timeActive;
+        private CooldownTimer _timerActive;
+
+        public GameObject aoe;
 
         protected override void OnStart()
         {
             base.OnStart();
+            
+            aoe.SetActive(false);
 
-            _timer = new CooldownTimer(timeBeforeBlowing, true);
-            _timer.Start();
-            _timer.TimerCompleteEvent += TimerOnTimerCompleteEvent;
+            _timerActive = new CooldownTimer(timeActive);
+            _timerActive.TimerCompleteEvent += TimerActiveOnTimerCompleteEvent;
+            
+            _timerBlowing = new CooldownTimer(timeBeforeBlowing);
+            _timerBlowing.Start();
+            _timerBlowing.TimerCompleteEvent += TimerBlowingOnTimerBlowingCompleteEvent;
         }
 
-        private void TimerOnTimerCompleteEvent()
+        private void TimerActiveOnTimerCompleteEvent()
+        {
+            aoe.SetActive(false);
+            _timerBlowing.Start();
+        }
+
+        private void TimerBlowingOnTimerBlowingCompleteEvent()
         {
             //woosh
+            aoe.SetActive(true);
+            _timerActive.Start();
         }
 
         public override void OnUpdate()
         {
             base.OnUpdate();
 
-            _timer.Update(Time.deltaTime);
+            _timerBlowing.Update(Time.deltaTime);
+            _timerActive.Update(Time.deltaTime);
         }
 
         private void OnDrawGizmosSelected()

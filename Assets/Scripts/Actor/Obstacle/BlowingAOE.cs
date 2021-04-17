@@ -27,11 +27,5 @@ namespace Actor.Obstacle
         {
             obstacle.OnCollision(other.transform);
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
     }
 }
