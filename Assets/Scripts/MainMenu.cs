@@ -8,9 +8,6 @@ public class MainMenu : MonoBehaviour
     public GameObject m_Menu;
     public GameObject m_MenuCredit;
 
-    //    public GameObject ;
-    //    public GameObject;
-
     private void Start()
     {
         m_Menu.gameObject.SetActive(true);
