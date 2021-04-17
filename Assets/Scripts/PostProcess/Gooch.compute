@@ -9,6 +9,8 @@
 RWTexture2D<float4> Result;
 RWTexture2D<float4> sobel;
 
+Texture2D<float4> colorTex;
+
 float3 lightDir;
 float3 cameraDir;
 
@@ -37,7 +39,7 @@ void Sobel (uint3 id : SV_DispatchThreadID)
     
     float2 uv = id.xy / _ScreenSize.xy;
 
-    float2 delta = float2(0.002, 0.002);
+    float2 delta = float2(0.0002, 0.0002);
 			
     float4 hr = float4(0, 0, 0, 0);
     float4 vt = float4(0, 0, 0, 0);
@@ -82,8 +84,7 @@ void Gooch (uint3 id : SV_DispatchThreadID)
     float NL = dot(normalize(normalData.normalWS), normalize(lightDir));
 
     float3 colorAlbedo = SampleCameraColor(uv);
-
-    float3 pos = _WorldSpaceCameraPos;
+    
     
     float it = ((1 + NL) / 2);
     float3 color = (1-it) * (float3(0, 0, 0.4) + a * colorAlbedo.xyz) 
@@ -96,7 +97,7 @@ void Gooch (uint3 id : SV_DispatchThreadID)
                            normalize(R)),
                      0, 1);
     
-    float4 spec = (float4)1 * pow(ER, normalData.perceptualRoughness);
+    float3 spec = (float3)1 * max(pow(ER, normalData.perceptualRoughness), 0.01);
 
-    Result[id.xy] = (color + spec.xyz, colorAlbedo.r);
+    Result[id.xy] = float4(spec + color + (-sobel[id.xy].xyz), 1);
 }
