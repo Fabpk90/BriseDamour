@@ -36,8 +36,8 @@ MonoBehaviour:
   Max: 500
   Default: 0
   ID:
-    data1: 0
-    data2: 0
+    data1: 2246645630
+    data2: 3031657838
   Exists: 1
 --- !u!114 &-7837855204223636079
 MonoBehaviour:
@@ -146,8 +146,8 @@ MonoBehaviour:
   Max: 5000
   Default: 0
   ID:
-    data1: 0
-    data2: 0
+    data1: 431861587
+    data2: 3172537084
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -262,8 +262,8 @@ MonoBehaviour:
   Max: 1000
   Default: 0
   ID:
-    data1: 0
-    data2: 0
+    data1: 1186828432
+    data2: 920576289
   Exists: 1
 --- !u!114 &5457790639561390818
 MonoBehaviour:

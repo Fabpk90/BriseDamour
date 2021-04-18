@@ -1,4 +1,7 @@
+using System;
+using FMODUnity;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -8,11 +11,25 @@ public class PlayerControl : MonoBehaviour
 
     private Rigidbody rb;
     
+    private CooldownTimer timer;
 
+    public StudioEventEmitter emitter;
+
+    public GameObject deathLul;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        timer = new CooldownTimer(5);
+        
+        timer.TimerCompleteEvent += TimerOnTimerCompleteEvent;
     }
+
+    private void TimerOnTimerCompleteEvent()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     void Update()
     {
         forceToApply = new Vector3();
@@ -46,6 +63,19 @@ public class PlayerControl : MonoBehaviour
         }
 
         transform.rotation = Quaternion.Euler(rotateToApply);
+        
+        timer.Update(Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Die();
+    }
+
+    public void Die()
+    {
+        timer.Start();
+        deathLul.SetActive(true);
     }
 
     private void FixedUpdate()
@@ -54,5 +84,8 @@ public class PlayerControl : MonoBehaviour
         Vector3 temp = rb.velocity;
         temp.z = speed;
         rb.velocity = temp;
+        
+        emitter.SetParameter("CVSpeed",  Mathf.Clamp(rb.velocity.magnitude * 500, 0, 1000));
+        emitter.SetParameter("Portance",  Mathf.Clamp(rb.velocity.y * 500, 0, 5000));
     }
 }

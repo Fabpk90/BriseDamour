@@ -99,5 +99,5 @@ void Gooch (uint3 id : SV_DispatchThreadID)
     
     float3 spec = (float3)1 * max(pow(ER, normalData.perceptualRoughness), 0.01);
 
-    Result[id.xy] = float4(spec + color + (-sobel[id.xy].xyz), 1);
+    Result[id.xy] = float4(spec + colorAlbedo + (-sobel[id.xy].xyz), 1);
 }

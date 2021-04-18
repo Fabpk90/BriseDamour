@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -17,6 +18,8 @@ namespace Actor.Obstacle
         private CooldownTimer _timerActive;
 
         public GameObject[] aoe;
+
+        public StudioEventEmitter emitter;
 
         protected override void OnStart()
         {
@@ -60,15 +63,6 @@ namespace Actor.Obstacle
 
             _timerBlowing.Update(Time.deltaTime);
             _timerActive.Update(Time.deltaTime);
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.green;
-
-            var transform1 = transform;
-            var position = transform1.position;
-            Gizmos.DrawLine(position, position + transform1.up * distance);
         }
     }
 }
