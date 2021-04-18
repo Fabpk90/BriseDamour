@@ -16,13 +16,16 @@ namespace Actor.Obstacle
         public float timeActive;
         private CooldownTimer _timerActive;
 
-        public GameObject aoe;
+        public GameObject[] aoe;
 
         protected override void OnStart()
         {
             base.OnStart();
-            
-            aoe.SetActive(false);
+
+            foreach (GameObject o in aoe)
+            {
+                o.SetActive(false);
+            }
 
             _timerActive = new CooldownTimer(timeActive);
             _timerActive.TimerCompleteEvent += TimerActiveOnTimerCompleteEvent;
@@ -34,14 +37,20 @@ namespace Actor.Obstacle
 
         private void TimerActiveOnTimerCompleteEvent()
         {
-            aoe.SetActive(false);
+            foreach (GameObject o in aoe)
+            {
+                o.SetActive(false);
+            }
             _timerBlowing.Start();
         }
 
         private void TimerBlowingOnTimerBlowingCompleteEvent()
         {
             //woosh
-            aoe.SetActive(true);
+            foreach (GameObject o in aoe)
+            {
+                o.SetActive(true);
+            }
             _timerActive.Start();
         }
 

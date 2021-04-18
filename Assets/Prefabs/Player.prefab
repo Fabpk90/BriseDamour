@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 2429162413782789760}
   - component: {fileID: 2429162413782789764}
   - component: {fileID: 2429162413782789767}
+  - component: {fileID: 1221285944385970268}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -290,6 +291,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 8, z: -10}
   toFollow: {fileID: 8220805984894532153}
+--- !u!114 &1221285944385970268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429162413782789763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69efcec5e1344df09dafdfaefeb3d1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 7200000, guid: 5265099579dfcdb408276fda218eab1d, type: 3}
+  directionalLight: {fileID: 0}
+  sobel: {fileID: 0}
+  copyTexture: {fileID: 0}
 --- !u!65 &5333190725019088232
 BoxCollider:
   m_ObjectHideFlags: 0
