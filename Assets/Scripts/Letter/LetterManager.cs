@@ -24,6 +24,8 @@ namespace Letter
 
         private void Start()
         {
+
+
             //load data 
           //  TextFromCSV = CSV_Reader.SplitCsvGrid(reader.csvFile.text);
 
