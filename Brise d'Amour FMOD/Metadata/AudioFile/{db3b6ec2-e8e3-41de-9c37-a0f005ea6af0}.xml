@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{db3b6ec2-e8e3-41de-9c37-a0f005ea6af0}">
+		<property name="assetPath">
+			<value>EarthRumble [2021-04-17 183426].aif</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.0631519274376409</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{693a92fa-963b-4b28-af86-cebe99b91e9d}</destination>
+		</relationship>
+	</object>
+</objects>

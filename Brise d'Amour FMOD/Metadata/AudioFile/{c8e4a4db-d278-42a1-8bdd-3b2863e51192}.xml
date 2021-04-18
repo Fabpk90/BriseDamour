@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{c8e4a4db-d278-42a1-8bdd-3b2863e51192}">
+		<property name="assetPath">
+			<value>PaShift5.aif</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.35068027210884356</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{693a92fa-963b-4b28-af86-cebe99b91e9d}</destination>
+		</relationship>
+	</object>
+</objects>

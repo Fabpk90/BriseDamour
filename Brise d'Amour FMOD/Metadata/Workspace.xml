@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="Workspace" id="{075dd13e-d581-4c0e-838a-8522d7855876}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../../Documents/GitHubKraken/BriseDamour/Assets/FMOD Bank/Build</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{696308fc-1233-4807-a093-2f3456797aec}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{9cb51e18-728c-44d4-92da-6ec0ff484d56}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{4cb0f198-c0f8-4e6a-bac8-8735f6f4ec02}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{c81a35b3-0d62-4fae-acfa-efc807f66b60}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{880cddc9-864b-4f49-abc5-077f2a8b0fa4}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{2416f122-b73a-4b36-9a7e-e67c0b64913b}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{693a92fa-963b-4b28-af86-cebe99b91e9d}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{d08ac900-b148-4f2e-8519-7b856ac059c1}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{37c6df4b-1f14-4400-a07c-82b140fd6be3}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{071366f5-8ff5-4a5b-bce1-9e99a18edb1f}</destination>
+		</relationship>
+	</object>
+</objects>

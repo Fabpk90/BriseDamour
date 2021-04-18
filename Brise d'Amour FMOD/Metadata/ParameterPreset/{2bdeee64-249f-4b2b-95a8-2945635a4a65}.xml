@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{2bdeee64-249f-4b2b-95a8-2945635a4a65}">
+		<property name="name">
+			<value>Portance</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c81a35b3-0d62-4fae-acfa-efc807f66b60}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{23c4d6e5-8521-429b-9c77-d0621d8139d0}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{23c4d6e5-8521-429b-9c77-d0621d8139d0}">
+		<property name="maximum">
+			<value>5000</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
