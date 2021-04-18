@@ -196,6 +196,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1173985994}
     m_Modifications:
+    - target: {fileID: 1769694543428140974, guid: 3f1f013174f6811498e5bca7325233d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1902756613}
+    - target: {fileID: 1769694543428140974, guid: 3f1f013174f6811498e5bca7325233d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769694543832083516, guid: 3f1f013174f6811498e5bca7325233d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1902756613}
+    - target: {fileID: 1769694543832083516, guid: 3f1f013174f6811498e5bca7325233d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitCredits
+      objectReference: {fileID: 0}
     - target: {fileID: 1769694544324100068, guid: 3f1f013174f6811498e5bca7325233d9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -549,3 +565,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1769694544324100068, guid: 3f1f013174f6811498e5bca7325233d9, type: 3}
   m_PrefabInstance: {fileID: 816160260}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1902756613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1769694544324100067, guid: 3f1f013174f6811498e5bca7325233d9, type: 3}
+  m_PrefabInstance: {fileID: 816160260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f583966f018079419ca38a3464c4c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
