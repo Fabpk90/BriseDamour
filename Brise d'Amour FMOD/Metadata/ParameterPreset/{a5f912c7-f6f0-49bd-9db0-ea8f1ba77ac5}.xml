@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{a5f912c7-f6f0-49bd-9db0-ea8f1ba77ac5}">
+		<property name="name">
+			<value>RotationSpeed</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c81a35b3-0d62-4fae-acfa-efc807f66b60}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d84c9f4e-849b-4e39-9eec-0c9cb2e35e1d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d84c9f4e-849b-4e39-9eec-0c9cb2e35e1d}">
+		<property name="maximum">
+			<value>500</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

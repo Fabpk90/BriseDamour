@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{2d9f36d6-ef4d-423b-b0fd-0c240d8c1b75}">
+		<property name="assetPath">
+			<value>WhiteBlowNoFilter [2021-04-17 142048].aif</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>29.779591836734692</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{693a92fa-963b-4b28-af86-cebe99b91e9d}</destination>
+		</relationship>
+	</object>
+</objects>
