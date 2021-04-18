@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/UI/Close
   guid: c72382aeb230594e868baeac65102059
   Banks:
-  - {fileID: -289249183934645292}
+  - {fileID: -2150732192557904105}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -42,7 +42,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5209852679780339898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   Path: event:/UI/Select
   guid: f65bdc47823b2a42a3f58d6c51e5d653
   Banks:
-  - {fileID: -289249183934645292}
+  - {fileID: -2150732192557904105}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -85,6 +85,88 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
+  Exists: 0
+--- !u!114 &-2150732192557904105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069af196ac3472948841fcd97ce690b9, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: F:/UnityProject/BrisedAmour/Brise d'Amour FMOD/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637543426139791409
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1407168
+  Exists: 1
+--- !u!114 &-1535742631778271970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069af196ac3472948841fcd97ce690b9, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: F:/UnityProject/BrisedAmour/Brise d'Amour FMOD/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637543426139681410
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1162
+  Exists: 1
+--- !u!114 &-1377195895832067311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7688ce88f5da0b4e94155ff146202d8, type: 3}
+  m_Name: parameter:/CVMove/CVSpeed
+  m_EditorClassIdentifier: 
+  Name: CVSpeed
+  Min: 0
+  Max: 1000
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-961201983000134798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7688ce88f5da0b4e94155ff146202d8, type: 3}
+  m_Name: parameter:/Geyser/TypeGeyser
+  m_EditorClassIdentifier: 
+  Name: TypeGeyser
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-289249183934645292
 MonoBehaviour:
@@ -104,7 +186,7 @@ MonoBehaviour:
   lastModified: 637543426139791409
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +200,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 9164635438140361739}
-  - {fileID: -289249183934645292}
+  - {fileID: -1535742631778271970}
+  - {fileID: -2150732192557904105}
   EditorEvents:
   - {fileID: 6023836722491498891}
   - {fileID: 4480999400251663352}
@@ -128,11 +210,51 @@ MonoBehaviour:
   - {fileID: -5209852679780339898}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -289249183934645292}
+  - {fileID: -2150732192557904105}
   StringsBanks:
-  - {fileID: 9164635438140361739}
+  - {fileID: -1535742631778271970}
   stringsBankWriteTime: 637543426139681410
   cacheVersion: 6
+--- !u!114 &1524279289756956333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7688ce88f5da0b4e94155ff146202d8, type: 3}
+  m_Name: parameter:/Geyser/GeyserEtat
+  m_EditorClassIdentifier: 
+  Name: GeyserEtat
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &2653444900714185103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7688ce88f5da0b4e94155ff146202d8, type: 3}
+  m_Name: parameter:/CVMove/Portance
+  m_EditorClassIdentifier: 
+  Name: Portance
+  Min: 0
+  Max: 5000
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3391335564929902058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,14 +270,14 @@ MonoBehaviour:
   Path: event:/Cerf Volant/CVMove
   guid: b5c9d244564a8e4c83b5c393d24eaa9b
   Banks:
-  - {fileID: -289249183934645292}
+  - {fileID: -2150732192557904105}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5258779718637106812}
-  - {fileID: 3493511675087222404}
-  - {fileID: 3444362267972138795}
+  - {fileID: -1377195895832067311}
+  - {fileID: 2653444900714185103}
+  - {fileID: 6724875379761192060}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -178,7 +300,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3493511675087222404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +320,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4480999400251663352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,13 +336,13 @@ MonoBehaviour:
   Path: event:/Obstacle/Geyser
   guid: 7832b957d03bed4bbf10275a8d5ce473
   Banks:
-  - {fileID: -289249183934645292}
+  - {fileID: -2150732192557904105}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -4845432820670820784}
-  - {fileID: 9153889944685093500}
+  - {fileID: 1524279289756956333}
+  - {fileID: -961201983000134798}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -239,7 +361,7 @@ MonoBehaviour:
   Path: event:/UI/Open
   guid: 2e9f9bb5e59e184d8f1df1978dcc53f2
   Banks:
-  - {fileID: -289249183934645292}
+  - {fileID: -2150732192557904105}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -247,6 +369,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 527
+--- !u!114 &6724875379761192060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7688ce88f5da0b4e94155ff146202d8, type: 3}
+  m_Name: parameter:/CVMove/RotationSpeed
+  m_EditorClassIdentifier: 
+  Name: RotationSpeed
+  Min: 0
+  Max: 500
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &9153889944685093500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +408,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &9164635438140361739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,4 +429,4 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 1162
-  Exists: 1
+  Exists: 0

@@ -336,7 +336,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: Brise d'Amour FMOD/Desktop
+  sourceBankPath: F:\UnityProject\BrisedAmour\Brise d'Amour FMOD\Desktop
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -344,7 +344,7 @@ MonoBehaviour:
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
-  ImportType: 0
+  ImportType: 1
   TargetAssetPath: FMODBanks
   TargetBankFolder: 
   LoggingLevel: 2
