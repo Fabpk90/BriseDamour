@@ -7,6 +7,14 @@ namespace Letter
     {
         public string pathData;
 
+        public static LetterManager instance;
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(this);
+            instance = this;
+        }
+
         private void Start()
         {
             //load data

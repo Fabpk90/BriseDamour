@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{d165b426-6fe2-48ab-b0c0-dfd5a393540e}">
+		<property name="name">
+			<value>CVSpeed</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c81a35b3-0d62-4fae-acfa-efc807f66b60}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{782f4393-fae0-4869-aa29-88c12ad02e97}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{782f4393-fae0-4869-aa29-88c12ad02e97}">
+		<property name="maximum">
+			<value>1000</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,103 @@
+#pragma enable_d3d11_debug_symbols
+#pragma kernel Sobel
+#pragma kernel Gooch
+
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+#include "Packages/com.unity.render-pipelines.high-definition/Runtime/ShaderLibrary/ShaderVariables.hlsl"
+#include "Packages/com.unity.render-pipelines.high-definition/Runtime/Material/NormalBuffer.hlsl"
+
+RWTexture2D<float4> Result;
+RWTexture2D<float4> sobel;
+
+Texture2D<float4> colorTex;
+
+float3 lightDir;
+float3 cameraDir;
+
+const float3x3 kernelX = 
+{
+    1, 2, 1,
+0, 0, 0,
+-1, -2, -1 
+};
+
+const float3x3 kernelY = 
+{
+    1, 0, -1,
+2, 0, -2,
+1, 0, -1
+};
+
+
+
+[numthreads(8,8,1)]
+void Sobel (uint3 id : SV_DispatchThreadID)
+{
+   // const float offset = 1.0f / 400.0f;
+
+    //stole on the internet
+    
+    float2 uv = id.xy / _ScreenSize.xy;
+
+    float2 delta = float2(0.0002, 0.0002);
+			
+    float4 hr = float4(0, 0, 0, 0);
+    float4 vt = float4(0, 0, 0, 0);
+    hr += SampleCameraDepth((uv + float2(-1.0, -1.0) * delta)) *  1.0;
+   // hr += SampleCameraDepth( (uv + float2( 0.0, -1.0) * delta)) *  0.0;
+    hr += SampleCameraDepth((uv + float2( 1.0, -1.0) * delta)) * -1.0;
+    hr += SampleCameraDepth( (uv + float2(-1.0,  0.0) * delta)) *  2.0;
+   // hr += SampleCameraDepth( (uv + float2( 0.0,  0.0) * delta)) *  0.0;
+    hr += SampleCameraDepth( (uv + float2( 1.0,  0.0) * delta)) * -2.0;
+    hr += SampleCameraDepth( (uv + float2(-1.0,  1.0) * delta)) *  1.0;
+  //  hr += SampleCameraDepth( (uv + float2( 0.0,  1.0) * delta)) *  0.0;
+    hr += SampleCameraDepth( (uv + float2( 1.0,  1.0) * delta)) * -1.0;
+    vt += SampleCameraDepth( (uv + float2(-1.0, -1.0) * delta)) *  1.0;
+    vt += SampleCameraDepth( (uv + float2( 0.0, -1.0) * delta)) *  2.0;
+    vt += SampleCameraDepth( (uv + float2( 1.0, -1.0) * delta)) *  1.0;
+//    vt += SampleCameraDepth( (uv + float2(-1.0,  0.0) * delta)) *  0.0;
+ //   vt += SampleCameraDepth( (uv + float2( 0.0,  0.0) * delta)) *  0.0;
+ //   vt += SampleCameraDepth( (uv + float2( 1.0,  0.0) * delta)) *  0.0;
+    vt += SampleCameraDepth( (uv + float2(-1.0,  1.0) * delta)) * -1.0;
+    vt += SampleCameraDepth( (uv + float2( 0.0,  1.0) * delta)) * -2.0;
+    vt += SampleCameraDepth( (uv + float2( 1.0,  1.0) * delta)) * -1.0;
+    hr = sqrt((hr.r * hr.r) + (hr.g * hr.g) +  (hr.b * hr.b));
+    vt = sqrt((vt.r * vt.r) + (vt.g * vt.g) +  (vt.b * vt.b));		
+    
+
+    Result[id.xy] = sqrt(hr * hr + vt * vt);
+}
+
+
+[numthreads(8,8,1)]
+void Gooch (uint3 id : SV_DispatchThreadID)
+{
+    float kd = 1;
+    float a = 0.2;
+    float b = 0.6;
+    
+    float2 uv = id.xy / _ScreenSize.xy;
+
+    NormalData normalData;
+    DecodeFromNormalBuffer(uv, normalData);
+
+    float NL = dot(normalize(normalData.normalWS), normalize(lightDir));
+
+    float3 colorAlbedo = SampleCameraColor(uv);
+    
+    
+    float it = ((1 + NL) / 2);
+    float3 color = (1-it) * (float3(0, 0, 0.4) + a * colorAlbedo.xyz) 
+               +  it * (float3(0.4, 0.4, 0) + b * colorAlbedo.xyz);
+    
+    //Highlights
+    float3 R = reflect( -normalize(lightDir), 
+                      normalize(normalData.normalWS) );
+    float ER = clamp( dot( normalize(cameraDir), 
+                           normalize(R)),
+                     0, 1);
+    
+    float3 spec = (float3)1 * max(pow(ER, normalData.perceptualRoughness), 0.01);
+
+    Result[id.xy] = float4(spec + color + (-sobel[id.xy].xyz), 1);
+}

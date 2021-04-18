@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{cb4970fe-2f67-45c0-a108-7757a2248a81}">
+		<property name="assetPath">
+			<value>LittleFlap1 [2021-04-17 152944].aif</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.2769160997732429</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{693a92fa-963b-4b28-af86-cebe99b91e9d}</destination>
+		</relationship>
+	</object>
+</objects>

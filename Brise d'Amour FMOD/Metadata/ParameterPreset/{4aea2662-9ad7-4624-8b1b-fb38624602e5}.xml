@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{4aea2662-9ad7-4624-8b1b-fb38624602e5}">
+		<property name="name">
+			<value>TypeGeyser</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c81a35b3-0d62-4fae-acfa-efc807f66b60}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8ce910aa-0956-48f2-931c-d6aa4565f2cb}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8ce910aa-0956-48f2-931c-d6aa4565f2cb}">
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
