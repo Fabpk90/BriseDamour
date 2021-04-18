@@ -16,6 +16,9 @@ public class PostProcessGooch : MonoBehaviour
     private CommandBuffer cmd;
     private void Start()
     {
+        //i'll see you in hell
+        directionalLight = GameObject.FindObjectOfType<Light>();
+        
         sobel = new RenderTexture(Screen.width, Screen.height, 0) {enableRandomWrite = true};
         copyTexture = new RenderTexture(Screen.width, Screen.height, 0) {enableRandomWrite = true};
 
