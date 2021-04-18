@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class LetterCollision : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        transform.gameObject.SetActive(false);
+        transform.GetComponent<MeshRenderer>().enabled = false;
     }
 }
    
